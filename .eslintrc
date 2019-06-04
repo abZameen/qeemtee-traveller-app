@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "env": {
+      "es6": true,
+      "node": true,
+      "shared-node-browser": true
+  },
+  "extends": [
+      "airbnb",
+      "plugin:prettier/recommended"
+  ]
+}

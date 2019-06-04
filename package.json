@@ -1,0 +1,42 @@
+{
+  "name": "qeemtee-traveller-app",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start-backend:dev": "BACKEND_ENV=development nodemon packages/node-back/server",
+    "start-backend:prod": "BACKEND_ENV=production node packages/node-back/server",
+    "start-frontend:dev": "webpack-dev-server"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "packages/node-back/**/*": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ],
+    "packages/react-front/test/**/*": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-plugin-import": "2.17.3",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-prettier": "2.6.1",
+    "eslint-plugin-react": "7.13.0",
+    "husky": "2.3.0",
+    "lint-staged": "8.1.7",
+    "prettier": "1.16.4"
+  }
+}
